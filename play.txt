@@ -1,0 +1,29 @@
+Write a function called play that takes the following arguments:
+
+curr_trick
+A tuple containing the cards played in the current incomplete trick, as per Q2.
+hand
+A tuple of cards (each in the form of a string) remaining in your hand for the current phase.
+prev_tricks
+A tuple of 4-tuples, which are the completed tricks of the current phase, as per Q2.
+player_no
+An integer between 0 and 3 inclusive indicating player order for the current phase, where players play in increasing order of player_no value, and the player with a player_no of 0 has the lead for the first trick.
+deck_top
+The top card of the deck, used to determine trumps for the current phase.
+phase_bids
+A 4-tuple containing the bids of the players for the current phase, in order of player_no.
+player_data
+An optional argument, defaulting to None. As per Q1.
+suppress_player_data
+An optional argument, defaulting to True. As per Q1.
+is_valid
+An optional argument, defaulting to your is_valid_play function you wrote for Q2.
+score
+An optional argument, defaulting to your score_phase function you wrote for Q3.
+Your function should return a single card representing your next play, either as a string, or as the first element of a 2-tuple, with the second element being the updated player_data, to be passed as an argument to the subsequent call of play.
+
+When we test your code, we will use our own implementation of is_valid_play and score_game, so that any errors you previously made will not carry forward in the marking.
+
+A basic program does not need to made use of player_data. This is provided for more advanced programs to use in determining their strategy.
+
+This question is substantially more open-ended than the first three questions. A basic solution that is able to play the game will be awarded full marks for correctness, but is not likely to be competitive and will be marked down for approach. Part of the mark for this project will be awarded on the basis of a competition between all student submissions, and a project that performs poorly in the competition will receive a low mark for the competition component.

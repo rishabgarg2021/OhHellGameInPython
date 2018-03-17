@@ -1,0 +1,26 @@
+Write a function called bid that takes the following arguments:
+
+hand
+A tuple of cards (each in the form of a string) that you have been dealt for the current phase, or in the case of phase 1 or 19, representing the cards of the other three players.
+player_no
+An integer between 0 and 3 inclusive indicating player order for the current phase, where players play in increasing order of player_no value, and the player with a player_no of 0 has the lead for the first trick.
+phase_no
+An integer between 1 and 19 inclusive, indicating the phase number of the current hand.
+deck_top
+The top card of the deck, used to determine trumps for the current phase.
+reshuffled
+An optional argument, defaulting to False. A Boolean indicating whether the deck was reshuffled as part of the deal for the current hand.
+player_data
+An optional argument, defaulting to None. A user-defined data structure containing information about the current game state.
+suppress_player_data
+An optional argument, defaulting to True. A Boolean argument, where True indicates that the function should return only the bid (and not player_data), and False indicates that player_data may be returned.
+player_data is intended as a way of circumventing the need for any global variables in your code, and as such, the use of global variables will be penalised. Note that there is no requirement that you make use of this argument. For the first call of play in a given game, player_data will take the form of None.
+
+The function should return an integer between 0 and 10 inclusive, indicating the number of tricks you predict you will win in the current phase. If you are wanting to pass player_data on to subsequent function calls, you should return a 2-tuple, where the first element is the bid, and the second element is the updated player_data. If you return an integer (and not a tuple), player_data will be set to None on the subsequent function call.
+
+In the case of phase 1 or 19, hand will take the form of a 3-element tuple of strings, representing the cards (in sequence of player_no) for the other three players. Note that you will not receive explicit information on your own hand in these phases.
+
+Note that an implementation of bid which makes use of no strategy (e.g. returns the same value irrespective of the parameters, or randomly generates a bid) will be marked down for approach.
+
+Note
+An optional argument means that it is optional to the caller of the function. As the implementer of the function, you must provide an implementation for all optional arguments that the specifications require.

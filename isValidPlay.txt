@@ -1,0 +1,9 @@
+Write a function called is_valid_play that takes the following arguments:
+
+play
+A single card representing a potential play.
+curr_trick
+A tuple of the cards that have been played in the curent round, with the first card being the card that was led, and an empty tuple indicating that you have lead.
+hand
+A tuple of the cards that you currently hold in your hand.
+Your function should return True if play is valid, and False otherwise.

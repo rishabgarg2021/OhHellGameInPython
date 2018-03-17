@@ -1,0 +1,15 @@
+Write a function called score_phase that takes the following arguments:
+
+bids
+A 4-tuple containing the bids of the players, in order of player_no.
+tricks
+A tuple of 4-tuples, each representing a single trick in the order of play, starting with the lead card, and with player number 0 leading the first trick.
+deck_top
+A string representing the card that was turned up on top of the deck at the start of play, which determins the trump suit for the phase.
+player_data
+An optional argument, defaulting to None. A user-defined data structure containing information about the current game state.
+suppress_player_data
+An optional argument, defaulting to True. A Boolean argument, where True indicates that the function should only return a 4-tuple of scores (and not player_data), and False indicates that player_data may be returned.
+Note that this function will only be called with data from a completed phase, meaning that the phase number will be implicit in the number of tricks played.
+
+Your function should return a 4-tuple of integers, representing the score for each of the four players (in order of player_no, as per bids). Note that the player_no of the leading player for a trick other than the first will be determined based on the preceding trick, and may be something other than than 0. If you are wanting to pass player_data on to subsequent function calls, you should return a 2-tuple instead, where the first element is the 4-tuple with the scores, and the second element is the updated player_data. If you return a 4-tuple (and not a 2-tuple), player_data will be set to None on the subsequent function call.
